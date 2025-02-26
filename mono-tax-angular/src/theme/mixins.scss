@@ -1,0 +1,17 @@
+@mixin title-text{
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+}
+@mixin subtitle-text{
+  font-size: 16px;
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+}
+@mixin button-text{
+  color: var(--text-color-dark);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  text-transform: capitalize;
+}

@@ -10,8 +10,8 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
-
+//@import "@ionic/angular/css/core.css";
+@import "theme/mixins";
 /* Basic CSS for apps built with Ionic */
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
@@ -34,4 +34,26 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+//@import '@ionic/angular/css/palettes/dark.system.css';
+
+*{
+  color: var(--text-color-light);
+}
+
+ion-button{
+  --background: var(--background-button);
+  --border-radius: 90px;
+  --padding-start: 16px;
+  --padding-top: 16px;
+  width: 100%;
+  --padding-bottom: 16px;
+  --padding-end: 16px;
+  @include button-text;
+}
+
+.title{
+  @include title-text;
+}
+.subtitle{
+  @include subtitle-text;
+}
