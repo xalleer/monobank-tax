@@ -1,5 +1,6 @@
 const express = require('express');
 const { getTotalIncome, getClientInfo } = require('../services/monobankService');
+const {post} = require("axios");
 
 const router = express.Router();
 
@@ -42,6 +43,18 @@ router.post('/webhook', (req, res) => {
     }
 
     res.sendStatus(200);
+});
+
+router.post('/auth', async (req, res) => {
+    try {
+        const response = await post(
+            'https://api.monobank.ua/personal/auth/registration',
+            req.body
+        );
+        res.json(response.data);
+    } catch (error) {
+        res.status(error.response?.status || 500).json({ error: error.message });
+    }
 });
 
 module.exports = router;
