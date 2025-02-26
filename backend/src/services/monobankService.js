@@ -24,7 +24,7 @@ async function getTotalIncome(accountId, from) {
         return totalIncome;
 
     } catch (error) {
-        console.error('Monobank API Error:', error.response?.data || error.message);
+        // console.error('Monobank API Error:', error.response?.data || error.message);
         throw error.response?.data || { error: 'Error fetching data' };
     }
 }
